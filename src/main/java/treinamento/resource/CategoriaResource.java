@@ -2,6 +2,8 @@ package treinamento.resource;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +27,7 @@ public class CategoriaResource {
 	}
 	
 	@PostMapping("/adicionar")
-	public Categoria adicionar(@RequestBody Categoria categoria) {
+	public Categoria adicionar(@RequestBody @Valid Categoria categoria) {
 		return categoriaService.adicionar(categoria);
 	}
 }
