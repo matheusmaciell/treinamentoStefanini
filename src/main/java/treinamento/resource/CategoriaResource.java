@@ -25,7 +25,7 @@ public class CategoriaResource {
 	}
 	
 	@PostMapping("/adicionar")
-	public void adicionar(@RequestBody Categoria categoria) {
-		categoriaService.adicionar(categoria);
+	public Categoria adicionar(@RequestBody Categoria categoria) {
+		return categoriaService.adicionar(categoria);
 	}
 }

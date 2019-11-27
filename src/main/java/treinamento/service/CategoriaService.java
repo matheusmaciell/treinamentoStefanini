@@ -18,8 +18,8 @@ public class CategoriaService {
 		return categoriaRepository.findAll();
 	}
 
-	public void adicionar(Categoria categoria) {
-		categoriaRepository.save(categoria);
+	public Categoria adicionar(Categoria categoria) {
+		return categoriaRepository.save(categoria);
 		
 	}
 }
