@@ -31,10 +31,11 @@ public class CategoriaService {
 	public Optional<Categoria> buscarPorId(Long codigo) {
 		Optional<Categoria> categoriaBuscada = categoriaRepository.findById(codigo);
 		if (categoriaBuscada.isPresent()) {
-			throw new CategoriaNaoEncontradaException("Categoria não existe");
+			return categoriaBuscada;
 		}
 		else {
-			return categoriaBuscada;
+			throw new CategoriaNaoEncontradaException("Categoria não existe");
+			
 		}
 		
 	}
